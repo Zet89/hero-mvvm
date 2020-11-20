@@ -1,1 +1,2 @@
-<h1> He is {{model.name}} but can he fly? {{model.canFly}}</h1>
+<h1 *ngIf="model.canFly"> He is {{model.name}} and he can fly</h1>
+<h1 *ngIf="!model.canFly"> He is {{model.name}} and he can't fly</h1>
