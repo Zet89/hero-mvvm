@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 import { UIComponent } from '../abstract/ui-component';
-import { HeroUiService } from './hero.comp.superman.ui-service';
 import { HeroViewModel } from './hero.comp.view-model';
+import { SupermanHeroUiService } from './superman/hero.comp.superman.ui-service';
 
 /**
  * With the exception of the extension and the injection of our ui-service,
@@ -12,11 +12,11 @@ import { HeroViewModel } from './hero.comp.view-model';
     selector: 'hero',
     templateUrl: './hero.comp.html',
     styleUrls: ['./hero.comp.scss'],
-    providers: [HeroUiService]
+    providers: [SupermanHeroUiService]
 })
 export class HeroComponent extends UIComponent<HeroViewModel>{
 
-    constructor(private heroService: HeroUiService) {
+    constructor(private heroService: SupermanHeroUiService) {
         super(heroService);
     }
 

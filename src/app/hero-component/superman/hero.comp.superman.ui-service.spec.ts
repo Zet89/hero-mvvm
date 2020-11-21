@@ -1,16 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 
-import { HeroUiService } from './hero.comp.superman.ui-service';
+import { SupermanHeroUiService } from './hero.comp.superman.ui-service';
 
 describe('Hero UI Service test', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
-            providers: [HeroUiService]
+            providers: [SupermanHeroUiService]
         });
     });
 
     it('should default to Superman', () => {
-        const service: HeroUiService = TestBed.get(HeroUiService);
+        const service: SupermanHeroUiService = TestBed.get(SupermanHeroUiService);
 
         expect(service).toBeTruthy();
         expect(service.model).toBeTruthy();

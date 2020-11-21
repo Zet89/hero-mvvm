@@ -2,9 +2,9 @@ import { Subscription } from 'rxjs';
 
 import { Injectable } from '@angular/core';
 
-import { UIService } from '../abstract/ui-service';
-import { IHeroUIService } from './hero.comp.ui-service.intf';
-import { HeroViewModel } from './hero.comp.view-model';
+import { UIService } from '../../abstract/ui-service';
+import { IHeroUIService } from '../hero.comp.ui-service.intf';
+import { HeroViewModel } from '../hero.comp.view-model';
 
 @Injectable()
 export class BatmanHeroUIservice extends UIService<HeroViewModel> implements IHeroUIService {

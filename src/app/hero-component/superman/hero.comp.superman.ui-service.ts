@@ -2,9 +2,9 @@ import { Subscription } from 'rxjs';
 
 import { Injectable } from '@angular/core';
 
-import { UIService } from '../abstract/ui-service';
-import { IHeroUIService } from './hero.comp.ui-service.intf';
-import { HeroViewModel } from './hero.comp.view-model';
+import { UIService } from '../../abstract/ui-service';
+import { IHeroUIService } from '../hero.comp.ui-service.intf';
+import { HeroViewModel } from '../hero.comp.view-model';
 
 /**
  * And this is where all of the business logic will go.
@@ -12,7 +12,7 @@ import { HeroViewModel } from './hero.comp.view-model';
  * that we might need.
  */
 @Injectable()
-export class HeroUiService extends UIService<HeroViewModel> implements IHeroUIService {
+export class SupermanHeroUiService extends UIService<HeroViewModel> implements IHeroUIService {
 
     private canFlySubscription: Subscription;
 
