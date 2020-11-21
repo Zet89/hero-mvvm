@@ -5,7 +5,7 @@ import { UIService } from './ui-service';
 export abstract class UIComponent<VIEW_MODEL> implements OnInit{
 
     /** Each components needs to inject (at least) it's UI service */
-    constructor(private uiService: UIService<VIEW_MODEL>) {
+    constructor(protected uiService: UIService<VIEW_MODEL>) {
     }
 
     /** We forward the init, just as a convenience */
