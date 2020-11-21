@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Inject, OnDestroy } from '@angular/core';
 
 import { UIComponent } from '../abstract/ui-component';
+import { HERO_UI_SERVICE_TOKEN, IHeroUIService } from './hero.comp.ui-service.intf';
 import { HeroViewModel } from './hero.comp.view-model';
-import { SupermanHeroUiService } from './superman/hero.comp.superman.ui-service';
 
 /**
  * With the exception of the extension and the injection of our ui-service,
@@ -11,20 +11,15 @@ import { SupermanHeroUiService } from './superman/hero.comp.superman.ui-service'
 @Component({
     selector: 'hero',
     templateUrl: './hero.comp.html',
-    styleUrls: ['./hero.comp.scss'],
-    providers: [SupermanHeroUiService]
+    styleUrls: ['./hero.comp.scss']
 })
-export class HeroComponent extends UIComponent<HeroViewModel>{
+export class HeroComponent extends UIComponent<HeroViewModel> implements OnDestroy {
 
-    constructor(private heroService: SupermanHeroUiService) {
+    constructor(@Inject(HERO_UI_SERVICE_TOKEN) private heroService: IHeroUIService) {
         super(heroService);
     }
 
-    cutWings(): void {
-        this.heroService.cutWings();
-    }
-
-    makeHimFly(): void {
-        this.heroService.makeHimFly();
+    ngOnDestroy(): void {
+        this.heroService.onDestroy();
     }
 }
