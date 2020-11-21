@@ -13,6 +13,7 @@ export class BatmanHeroUIservice extends UIService<HeroViewModel> implements IHe
 
     constructor() {
         super(new HeroViewModel());
+        console.log('BATMAN CONSTRUCTED');
     }
 
     ngOnInit(): void {

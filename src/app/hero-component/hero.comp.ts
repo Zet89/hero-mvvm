@@ -1,7 +1,9 @@
 import { Component, Inject, OnDestroy } from '@angular/core';
 
 import { UIComponent } from '../abstract/ui-component';
-import { HERO_UI_SERVICE_TOKEN, IHeroUIService } from './hero.comp.ui-service.intf';
+import {
+    HERO_UI_SERVICE_TOKEN, heroUIServiceFactory, IHeroUIService
+} from './hero.comp.ui-service.intf';
 import { HeroViewModel } from './hero.comp.view-model';
 
 /**
@@ -11,7 +13,10 @@ import { HeroViewModel } from './hero.comp.view-model';
 @Component({
     selector: 'hero',
     templateUrl: './hero.comp.html',
-    styleUrls: ['./hero.comp.scss']
+    styleUrls: ['./hero.comp.scss'],
+    providers: [
+        { provide: HERO_UI_SERVICE_TOKEN, useFactory: heroUIServiceFactory, deps: [] }
+    ]
 })
 export class HeroComponent extends UIComponent<HeroViewModel> implements OnDestroy {
 

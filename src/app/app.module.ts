@@ -5,9 +5,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HeroComponent } from './hero-component/hero.comp';
-import {
-    HERO_UI_SERVICE_TOKEN, heroUIServiceFactory
-} from './hero-component/hero.comp.ui-service.intf';
 
 @NgModule({
   declarations: [
@@ -18,7 +15,6 @@ import {
     BrowserModule
   ],
   providers: [
-    { provide: HERO_UI_SERVICE_TOKEN, useFactory: heroUIServiceFactory, deps: []}
   ],
   bootstrap: [AppComponent]
 })
